@@ -1,1 +1,6 @@
+@import './font/font.css';
 @import 'tailwindcss';
+
+body {
+  font-family: 'Outfit', Arial, Helvetica, sans-serif;
+}

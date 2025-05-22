@@ -6,6 +6,7 @@ import {
 } from '../services/RecipeService';
 import { Categories, Drink, Drinks, Recipe } from '../types';
 import { SearchFilter } from '../types/index';
+import { FavoritesSliceType } from './favoritesSlice';
 
 export type RecipeSliceType = {
   categories: Categories;
@@ -18,7 +19,12 @@ export type RecipeSliceType = {
   closeModal: () => void;
 };
 
-export const createRecipesSlice: StateCreator<RecipeSliceType> = (set) => ({
+export const createRecipesSlice: StateCreator<
+  RecipeSliceType & FavoritesSliceType,
+  [],
+  [],
+  RecipeSliceType
+> = (set) => ({
   categories: { drinks: [] },
   drinks: { drinks: [] },
   selectedRecipe: {} as Recipe,
